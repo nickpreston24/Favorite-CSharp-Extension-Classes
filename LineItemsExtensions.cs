@@ -109,7 +109,7 @@ public static class MyLineItemsExtensions{
                 {
                     if (showWarnings)
                     {
-                        Debug.WriteLine($$"No matches found! Could not extract a '{typeof(T).Name}' instance from regex pattern:\n{regexPattern}.\n");
+                        Debug.WriteLine($"No matches found! Could not extract a '{typeof(T).Name}' instance from regex pattern:\n{regexPattern}.\n");
                         Debug.WriteLine(text);                        
                         Debug.WriteLine("Properties without a mapped Group:");
                         properties.Select(p => p.Name).ToList()
@@ -127,15 +127,15 @@ public static class MyLineItemsExtensions{
                 {
                     if (showWarnings)
                     {
-                        Debug.WriteLine($$"{MethodBase.GetCurrentMethod().Name}() WARNING: Number of Matched Groups ({match.Groups.Count}) does not equal the number of properties for the given class '{typeof(T).Name}'({typeof(T).GetProperties().Length})!  Check the class type and regex pattern for errors and try again.");
+                        Debug.WriteLine($"{MethodBase.GetCurrentMethod().Name}() WARNING: Number of Matched Groups ({match.Groups.Count}) does not equal the number of properties for the given class '{typeof(T).Name}'({typeof(T).GetProperties().Length})!  Check the class type and regex pattern for errors and try again.");
                     }
                     Debug.WriteLine("Values Parsed:");
                     for (int i = 1; i < match.Groups.Count; i++)
-                        Debug.Write($$"{match.Groups[i].Value}\t");
+                        Debug.Write($"{match.Groups[i].Value}\t");
                     Debug.WriteLine("\n");
                     if (matchExact)
                     {
-                        Debug.WriteLine($$"Could not create an exact match! Returning default {typeof(T).Name}");
+                        Debug.WriteLine($"Could not create an exact match! Returning default {typeof(T).Name}");
                         return dfltObj;
                     }
                 }
@@ -156,7 +156,7 @@ public static class MyLineItemsExtensions{
             }
             catch (Exception ex)
             {
-                string errMsg = $$"{MethodBase.GetCurrentMethod().Name}: {ex.ToString()}";
+                string errMsg = $"{MethodBase.GetCurrentMethod().Name}: {ex.ToString()}";
                 Debug.WriteLine(errMsg);
                 return dfltObj;
             }
