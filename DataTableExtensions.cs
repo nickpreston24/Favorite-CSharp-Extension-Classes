@@ -116,7 +116,7 @@
                 {
                     if (table.Columns[columnName] == null)
                     {
-                        Debug.WriteLine($$"Could not find column {columnName} in table {table.TableName}");
+                        Debug.WriteLine($"Could not find column {columnName} in table {table.TableName}");
                         return;
                     }
                     table.Columns[columnName].SetOrdinal(columnIndex);
@@ -124,7 +124,7 @@
                 }
                 catch (Exception ex)
                 {
-                    string errMsg = string.Format($$"{MethodBase.GetCurrentMethod().Name}: {ex.ToString()}");
+                    string errMsg = string.Format($"{MethodBase.GetCurrentMethod().Name}: {ex.ToString()}");
                     Debug.WriteLine(errMsg);
                     NLogger.Error(errMsg);
                 }
@@ -144,7 +144,7 @@
             }
             catch (Exception ex)
             {
-                string errMsg = string.Format($$"{MethodBase.GetCurrentMethod().Name}: {ex.ToString()}");
+                string errMsg = string.Format($"{MethodBase.GetCurrentMethod().Name}: {ex.ToString()}");
                 Debug.WriteLine(errMsg);
                 NLogger.Error(errMsg);
             }
